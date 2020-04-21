@@ -1,0 +1,42 @@
+baseURL = "https://a98zhang.github.io/"
+languageCode = "en-us"
+title = "ASHLEY ZHANG"
+theme = "hugo-creative-portfolio-theme"
+
+
+[params]
+  # Style options: default (pink), blue, green, pink, red, sea, violet
+  # Use custom.css for your custom styling
+  style = "green"
+  description = "ASHLEY ZHANG"
+  copyright = "&copy;2020 from A to Z"
+  sidebarAbout = [
+    "A data lover, a life long learner.",
+    "📍 New York City"
+  ]
+
+  # Nav links in the side bar
+  [[params.navlinks]]
+  name = "Portfolio"
+  url = "portfolio/"
+  home = true
+
+  [[params.navlinks]]
+  name = "Blog"
+  url = "blog/"
+
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "Resume"
+  url = "https://github.com/a98zhang/toshare/blob/master/Ashley(Qingyang)%20Zhang%20-%20Resume.pdf"
+
+  [params.social]
+  email         = "qingyang.zhang@nyu.edu"
+  twitter       = "https://twitter.com/ashleyzhang_qy"
+  linkedin      = "https://www.linkedin.com/in/ashleyz98/"
+  github        = "https://github.com/a98zhang"
+

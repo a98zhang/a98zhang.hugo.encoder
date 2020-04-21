@@ -1,0 +1,7 @@
+[submodule "themes/hugo-creative-portfolio-theme"]
+	path = themes/hugo-creative-portfolio-theme
+	url = https://github.com/kishaningithub/hugo-creative-portfolio-theme.git
+[submodule "public"]
+	path = public
+	url = https://github.com/a98zhang/a98zhang.github.io.git
+	branch = master
