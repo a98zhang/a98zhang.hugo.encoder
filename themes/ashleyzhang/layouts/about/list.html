@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+</div>
+
+<div class="about-layout">
+  <div class="about-text">
+    {{ .Content }}
+  </div>
+  <div class="about-sidebar">
+    {{ with .Site.Params.profileImage }}
+    <img src="{{ . | relURL }}" alt="{{ $.Site.Title }}">
+    {{ end }}
+    <div class="about-sidebar-links">
+      {{ with .Site.Params.social.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+      {{ with .Site.Params.social.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+      {{ with .Site.Params.social.twitter }}<a href="{{ . }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+      {{ with $.Site.Params.resumeURL }}<a href="{{ . }}" target="_blank" rel="noopener">Resume ↗</a>{{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

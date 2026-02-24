@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="home-intro">
+  <h1>{{ .Site.Params.homeTitle | default .Site.Title }}</h1>
+  <p class="tagline">{{ .Site.Params.homeTagline }}</p>
+
+  <div class="home-sections">
+    <a href="{{ "/research/" | relURL }}" class="home-section-card">
+      <span class="section-label">Research</span>
+      <h3>Academic Work</h3>
+      <p>Publications and research projects at the intersection of social cognition and machine learning.</p>
+    </a>
+    <a href="{{ "/projects/" | relURL }}" class="home-section-card">
+      <span class="section-label">Projects</span>
+      <h3>Making Things</h3>
+      <p>Data storytelling, vibe coding, and tools I build out of curiosity.</p>
+    </a>
+    <a href="{{ "/writing/" | relURL }}" class="home-section-card">
+      <span class="section-label">Writing</span>
+      <h3>Reflections</h3>
+      <p>Notes, essays, and thinking out loud.</p>
+    </a>
+  </div>
+
+  <div class="home-social">
+    {{ with .Site.Params.social.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+    {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    {{ with .Site.Params.social.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+    {{ with .Site.Params.social.twitter }}<a href="{{ . }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+  </div>
+</div>
+{{ end }}

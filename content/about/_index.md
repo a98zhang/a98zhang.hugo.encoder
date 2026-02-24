@@ -1,29 +1,23 @@
 ---
-title: "About Me"
-date: 2020-04-19T23:25:01-04:00
-draft: false
+title: "About"
 ---
 
-Hey, I'm Ashley.
-How are you doing today?
+Hey, I'm Ashley — a researcher and builder based in New York City.
 
-We are now living in the sea of data.
-And I aspire to be the swim coach that save you from drowning.
+I studied Applied Psychology and Computer Science at NYU, where I became interested in using quantitative and computational methods to ask questions about how people think, categorize, and make sense of the social world.
 
-![This is me][1]
+<!-- TODO: Add a sentence or two about what you're doing now (current role, affiliation, or focus) -->
 
-An Applied Psychology and Computer Science double major, I have extensive experience working with data from a well-rounded perspective: algorithms and models, machine learning at scale, but also cautious inference, human biases.
+## Research
 
-Utilizing my skills in research and analytics, I have helped organizations generate insights from data to make informed decisions. Meanwhile, as an independent researcher, I have attempted to investigate psychology research questions using machine learning techniques. 
+My work sits at the intersection of social cognition and machine learning. I'm drawn to questions like: how do people mentally organize social groups? How does culture shape those representations? I use both experimental methods and ML techniques — clustering, dimensionality reduction, regression — to investigate these.
 
-In addition to honing skills in programming and analytics, I have also cultivated a human-centered perspective and user-focused mindset through internship in product management as well as voluntary work in social services.
+## Building
 
-I am always an eager learner, an effective communicator, a civic tech follower, and a child development enthusiast. Graduating this May, I am actively looking for opportunities in data analysis and product management. Please feel free to reach me qingyang.zhang@nyu.edu. 
+Outside of research, I enjoy making things: data stories, small tools, experiments in code. I'm drawn to projects where the goal is to make something complex more legible, or where I just want to see what happens when you try.
 
-#### Education
+## Background
 
-* New York University 
-* Applied Psychology & Computer Science
+- B.A. Applied Psychology & Computer Science, New York University
 
-
-[1]: /img/profile.jpg
+<!-- TODO: Add current role or affiliation if applicable -->

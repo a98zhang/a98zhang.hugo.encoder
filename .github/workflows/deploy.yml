@@ -1,0 +1,43 @@
+# GitHub Actions — auto-deploy on push to master
+#
+# Setup required (one-time):
+# 1. Generate a Personal Access Token (PAT) with `repo` scope at
+#    https://github.com/settings/tokens
+# 2. In the source repo (a98zhang.hugo.encoder), go to
+#    Settings → Secrets → Actions → New repository secret
+#    Name: DEPLOY_TOKEN   Value: <your PAT>
+#
+# After merging to master, this workflow builds the site and
+# pushes the output to a98zhang/a98zhang.github.io automatically.
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: a98zhang/a98zhang.github.io
+          publish_branch: master
+          publish_dir: ./public

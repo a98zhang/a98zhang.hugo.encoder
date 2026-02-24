@@ -1,0 +1,4 @@
+name = "ashleyzhang"
+license = "MIT"
+description = "Custom minimal theme for Ashley Zhang's personal site"
+min_version = "0.80.0"
