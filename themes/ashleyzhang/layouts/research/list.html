@@ -1,0 +1,61 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+</div>
+
+{{ $papers := where .Pages "Params.subtype" "paper" }}
+{{ $projects := where .Pages "Params.subtype" "project" }}
+
+{{ if $papers }}
+<div class="research-group">
+  <div class="research-group-label">Publications</div>
+  {{ range $papers }}
+  <div class="research-item">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="research-meta">
+      {{ with .Params.venue }}<span class="venue">{{ . }}</span>{{ end }}
+      {{ with .Params.year }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.authors }}<span>{{ delimit . ", " }}</span>{{ end }}
+    </div>
+    {{ with .Params.abstract }}
+    <p class="research-summary">{{ . | truncate 220 }}</p>
+    {{ else }}
+    <p class="research-summary">{{ .Summary }}</p>
+    {{ end }}
+    {{ $hasLinks := or .Params.pdf_link .Params.github_link .Params.doi }}
+    {{ if $hasLinks }}
+    <div class="research-links">
+      {{ with .Params.pdf_link }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+      {{ with .Params.github_link }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+      {{ with .Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ if $projects }}
+<div class="research-group">
+  <div class="research-group-label">Research Projects</div>
+  {{ range $projects }}
+  <div class="research-item">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="research-meta">
+      {{ with .Params.year }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.collaborators }}<span>with {{ delimit . ", " }}</span>{{ end }}
+    </div>
+    <p class="research-summary">{{ .Summary }}</p>
+    {{ $hasLinks := or .Params.github_link .Params.demo_link }}
+    {{ if $hasLinks }}
+    <div class="research-links">
+      {{ with .Params.github_link }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+      {{ with .Params.demo_link }}<a href="{{ . }}" target="_blank" rel="noopener">Demo</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}

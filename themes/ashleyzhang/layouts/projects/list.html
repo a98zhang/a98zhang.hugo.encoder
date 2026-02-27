@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+</div>
+
+<div class="projects-grid">
+  {{ range .Pages }}
+  <div class="project-card">
+    {{ with .Params.project_type }}<div class="project-type">{{ . }}</div>{{ end }}
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p class="project-desc">{{ .Summary }}</p>
+    {{ with .Params.stack }}
+    <div class="project-stack">
+      {{ range . }}<span class="stack-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+    {{ $hasLinks := or .Params.demo_link .Params.github_link }}
+    {{ if $hasLinks }}
+    <div class="project-links">
+      {{ with .Params.demo_link }}<a href="{{ . }}" target="_blank" rel="noopener">Demo →</a>{{ end }}
+      {{ with .Params.github_link }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
